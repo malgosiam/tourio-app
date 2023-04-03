@@ -29,6 +29,7 @@ export default function Form({ onSubmit, formName, defaultData }) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
+    console.log(data);
     onSubmit(data);
   }
 
@@ -45,7 +46,7 @@ export default function Form({ onSubmit, formName, defaultData }) {
       <Input
         id="image-url"
         name="image"
-        type="text"
+        type="url"
         defaultValue={defaultData?.image}
       />
       <Label htmlFor="location">Location</Label>
@@ -59,7 +60,7 @@ export default function Form({ onSubmit, formName, defaultData }) {
       <Input
         id="map-url"
         name="mapURL"
-        type="text"
+        type="url"
         defaultValue={defaultData?.mapURL}
       />
       <Label htmlFor="description">Description</Label>
